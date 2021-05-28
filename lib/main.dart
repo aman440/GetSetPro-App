@@ -1,44 +1,20 @@
+//import 'dart:js';
+
 import 'package:flutter/material.dart';
+import 'package:taskify/views/register.dart';
+import 'package:taskify/views/splash.dart';
+import '../views/login.dart';
+import '../views/register.dart';
 
 void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.black,
-        body: SafeArea(
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CircleAvatar(
-                  radius: 100.0,
-                  backgroundImage: AssetImage('images/logo.png'),
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                Text(
-                  'taskify',
-                  style: TextStyle(
-                    fontSize: 30.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                Divider(
-                  height: 10.0,
-                  color: Colors.blue,
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    title: 'Named Routes Demo',
+    initialRoute: '/',
+    routes: {
+      '/': (context) => splash(),
+      '/second': (context) => login(),
+      '/third': (context) => register(),
+    },
+  ));
 }
