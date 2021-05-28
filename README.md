@@ -1,5 +1,11 @@
 # taskify
 
+Contributers -
+1. Aman Pratap Singh
+2. Gaurav Anand
+3. Vedant Gupta
+4. Purnendu Vashistha
+
 A new Flutter project.
 
 ## Getting Started
