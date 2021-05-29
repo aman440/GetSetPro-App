@@ -32,6 +32,10 @@ dependencies:
   cloud_firestore: ^2.2.0
   firebase_auth: ^1.2.0
   firebase_core: ^1.2.0
+  google_fonts: ^2.1.0
+  clay_containers: ^0.3.2
+  flutter_calendar_carousel: ^1.4.12
+  flutter_neumorphic: 
 
 dev_dependencies:
   flutter_test:
@@ -50,7 +54,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - images/
+    - assets/rive/
+    - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
