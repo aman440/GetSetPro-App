@@ -23,6 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  firebase_messaging: ^10.0.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -60,6 +61,10 @@ dependencies:
   #razorpay_flutter: ^1.2.5
   #flutter_card_swipper: ^0.4.0
 
+  cloud_firestore: ^2.2.0
+  firebase_auth: ^1.2.0
+  firebase_core: ^1.2.0
+
 
 dev_dependencies:
   flutter_test:
@@ -76,9 +81,9 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+  # To add assets to your application, add an assets section, like this:
   assets:
-    - images/dp.jfif
-
+    - images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
