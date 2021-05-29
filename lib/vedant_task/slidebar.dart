@@ -1,26 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:taskify/task_list/models/task_data.dart';
+import 'package:taskify/task_list/screens/add_task_screen.dart';
+import 'package:taskify/task_list/screens/tasks_screen.dart';
 import 'page.dart';
 
 class AppContainer extends StatefulWidget {
+  static String id = 'slideBar';
   @override
   _AppContainerState createState() => _AppContainerState();
 }
 
 class _AppContainerState extends State<AppContainer> {
   final List<Paaage> menu = [
-    Paaage(
-      iconName: Icons.home,
-      name: 'Home',
-    ),
-    Paaage(
-      iconName: Icons.add,
-      name: 'Add New Post',
-    ),
-    Paaage(
-      iconName: Icons.settings,
-      name: 'Setting',
-    ),
+    Paaage(iconName: Icons.home, name: 'Home'),
+    Paaage(iconName: Icons.add, name: 'Add New Post'),
+    Paaage(iconName: Icons.settings, name: 'Setting'),
   ];
   // final List<String> menuItems = ["Home", "Add New Post", "Settings"];
   // final List<IconData> menuIcons = [
@@ -48,13 +44,64 @@ class _AppContainerState extends State<AppContainer> {
     });
   }
 
-  void setPageContent() {
-    content = menu[selectedMenuItem].content1;
+  // void setPageContent() {
+  //   content = menu[selectedMenuItem].content1;
+  // }
+
+  @override
+  void initState() {
+    super.initState();
   }
 
+  final List<Widget> contents = [
+    Column(children: [
+      Container(
+        color: Colors.pink,
+        child: Row(
+          children: [
+            Expanded(
+              child: GestureDetector(
+                onTap: () => print('hi'),
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                  margin: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Text(
+                    'Task',
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            ),
+            Expanded(
+              child: GestureDetector(
+                onTap: () {},
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                  margin: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Text(
+                    'Rank',
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+      Container(padding: EdgeInsets.only(top: 0), child: TasksScreen()),
+    ]),
+    AddTaskScreen(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: MediaQuery.of(context).size.height,
       child: Stack(
         children: <Widget>[
           Container(
@@ -105,12 +152,15 @@ class _AppContainerState extends State<AppContainer> {
                   child: Expanded(
                       child: new ListView.builder(
                           itemCount: menu.length,
-                          itemBuilder: (context, index) => GestureDetector(
+                          itemBuilder: (context, index) => InkWell(
                                 onTap: () {
+                                  print(selectedMenuItem);
                                   sidebarOpen = false;
-                                  selectedMenuItem = index;
+                                  setState(() {
+                                    selectedMenuItem = index;
+                                  });
                                   setSidebarState();
-                                  setPageContent();
+                                  // setPageContent();
                                 },
                                 child: MenuItem(
                                   itemIcon: menu[index].iconName,
@@ -132,39 +182,43 @@ class _AppContainerState extends State<AppContainer> {
             ),
           ),
           AnimatedContainer(
+            height: double.infinity,
+            width: double.infinity,
             curve: Curves.easeInOut,
             duration: Duration(milliseconds: 200),
             transform: Matrix4.translationValues(xOffset, yOffset, 1.0)
               ..scale(pageScale),
-            width: double.infinity,
-            height: double.infinity,
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: sidebarOpen
                     ? BorderRadius.circular(20)
                     : BorderRadius.circular(0)),
-            child: Column(
-              children: <Widget>[
-                Container(
-                  margin: const EdgeInsets.only(top: 24),
-                  height: 60,
-                  child: Row(
-                    children: <Widget>[
-                      GestureDetector(
-                        onTap: () {
-                          sidebarOpen = !sidebarOpen;
-                          setSidebarState();
-                        },
-                        child: Container(
-                            color: Colors.white,
-                            padding: const EdgeInsets.all(20),
-                            child: Icon(Icons.menu)),
-                      ),
-                    ],
+            child: SingleChildScrollView(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    margin: const EdgeInsets.only(top: 15),
+                    height: 60,
+                    child: Row(
+                      children: <Widget>[
+                        GestureDetector(
+                          onTap: () {
+                            sidebarOpen = !sidebarOpen;
+                            setSidebarState();
+                          },
+                          child: Container(
+                              color: Colors.white,
+                              padding: const EdgeInsets.all(20),
+                              child: Icon(Icons.menu)),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                Content(),
-              ],
+                  menu[selectedMenuItem].iconName == Icons.add
+                      ? contents[1]
+                      : contents[0],
+                ],
+              ),
             ),
           ),
         ],

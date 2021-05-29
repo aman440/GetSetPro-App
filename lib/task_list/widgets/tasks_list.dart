@@ -9,25 +9,39 @@ import 'package:provider/provider.dart';
 class TasksList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Consumer<TaskData>(
-      builder: (context, taskData, child) {
-        return ListView.builder(
-          itemBuilder: (context, index) {
-            final task = taskData.tasks[index];
-            return TaskTile(
-              taskTitle: task.name,
-              isChecked: task.isDone,
-              checkboxCallback: (checkboxState) {
-                taskData.updateTask(task);
+    return Container(
+      height: MediaQuery.of(context).size.height * 0.4,
+      child: Consumer<TaskData>(
+        builder: (context, taskData, child) {
+          return ListView.builder(
+              shrinkWrap: true,
+              itemBuilder: (context, index) {
+                final task = taskData.tasks[index];
+                return Container(
+                  margin: EdgeInsets.symmetric(vertical: 20),
+                  child: ListTile(
+                      onLongPress: () {
+                        taskData.deleteTask(task);
+                      },
+                      title: Text(
+                        task.name,
+                        style: TextStyle(
+                            decoration: task.isDone
+                                ? TextDecoration.lineThrough
+                                : null),
+                      ),
+                      trailing: Checkbox(
+                        activeColor: Colors.lightBlueAccent,
+                        value: task.isDone,
+                        onChanged: (checkboxState) {
+                          taskData.updateTask(task);
+                        },
+                      )),
+                );
               },
-              longPressCallback: () {
-                taskData.deleteTask(task);
-              },
-            );
-          },
-          itemCount: taskData.taskCount,
-        );
-      },
+              itemCount: taskData.taskCount);
+        },
+      ),
     );
   }
 }

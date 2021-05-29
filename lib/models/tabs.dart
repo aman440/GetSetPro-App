@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:taskify/task_list/screens/add_task_screen.dart';
+import 'package:taskify/vedant_task/slidebar.dart';
 import 'package:taskify/views/tabs/dashboard.dart';
 import 'package:taskify/views/tabs/peers.dart';
 import 'package:taskify/views/tabs/profile.dart';
@@ -19,13 +21,13 @@ class TabViews extends ChangeNotifier {
 
   Widget getTabView(BuildContext context) {
     Widget ob;
-    ob = DashboardTab();
+    ob = AppContainer();
     switch (selectedIndex) {
       case 0:
-        ob = DashboardTab();
+        ob = AppContainer();
         break;
       case 1:
-        ob = PeersTab();
+        ob = AddTaskScreen();
         break;
       case 2:
         ob = StatusTab();

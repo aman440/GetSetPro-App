@@ -65,12 +65,13 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<TaskData>(
           create: (context) => TaskData(),
-          )
+        )
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         initialRoute: HomePage.id,
         routes: {
+          AppContainer.id: (context) => AppContainer(),
           HomePage.id: (context) => HomePage(),
           SplashPage.id: (context) => SplashPage(),
           RegisterPage.id: (context) => RegisterPage(),

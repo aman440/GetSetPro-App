@@ -8,9 +8,9 @@ class TaskTile extends StatelessWidget {
 
   TaskTile(
       {required this.isChecked,
-        required this.taskTitle,
-        required this.checkboxCallback,
-        required this.longPressCallback});
+      required this.taskTitle,
+      required this.checkboxCallback,
+      required this.longPressCallback});
 
   @override
   Widget build(BuildContext context) {
