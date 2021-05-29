@@ -1,23 +1,17 @@
-//import 'dart:js';
-
 import 'package:flutter/material.dart';
-import 'package:taskify/views/register.dart';
-import 'package:taskify/views/splash.dart';
-import '../views/login.dart';
-import '../views/register.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:taskify/vedant_task/slidebar.dart';
 
-Future<void> main() async {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    title: 'Named Routes Demo',
-    initialRoute: '/',
-    routes: {
-      //TODO: defineIdOfRoutes
+void main() {
+  runApp(MyApp());
+}
 
-      '/': (context) => splash(),
-      '/second': (context) => Login(),
-      '/third': (context) => Register(),
-    },
-  ));
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: AppContainer(),
+      ),
+    );
+  }
 }
