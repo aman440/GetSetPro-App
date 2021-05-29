@@ -1,15 +1,22 @@
 //import 'dart:developer';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+import 'package:taskify/widgets/action.dart';
 import '../services/auth.dart';
 
-class Register extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
+  static String id = 'registerPage';
   @override
-  _RegisterState createState() => _RegisterState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _RegisterState extends State<Register> {
+class _RegisterPageState extends State<RegisterPage> {
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+  bool _showProgressBar = false;
   Widget buildEmail() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,6 +45,7 @@ class _RegisterState extends State<Register> {
               ]),
           height: 60.0,
           child: TextField(
+            controller: _emailController,
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
               color: Colors.black,
@@ -49,7 +57,7 @@ class _RegisterState extends State<Register> {
                   Icons.mail,
                   color: Color(0xff5ac18e),
                 ),
-                hintText: 'Enter Your Email i\'d',
+                hintText: 'Enter Your Email id',
                 hintStyle: TextStyle(
                   color: Colors.black38,
                 )),
@@ -87,6 +95,7 @@ class _RegisterState extends State<Register> {
               ]),
           height: 60.0,
           child: TextField(
+            controller: _passwordController,
             obscureText: true,
             style: TextStyle(
               color: Colors.black,
@@ -114,8 +123,24 @@ class _RegisterState extends State<Register> {
       width: double.infinity,
       child: RaisedButton(
         elevation: 5,
-        onPressed: () {
-          print("SignUp button pressed");
+        onPressed: () async {
+          final auth = Provider.of<Auth>(context, listen: false);
+          setState(() {
+            _showProgressBar = true;
+          });
+          var result = await auth.signIn(
+              context: context,
+              email: _emailController.text.toString().trim(),
+              password: _passwordController.text.toString().trim());
+          setState(() {
+            _showProgressBar = false;
+          });
+          if (result)
+            print(result);
+          // Navigator.popAndPushNamed(context, HomePage.id);
+          else {
+            _passwordController.clear();
+          }
         },
         padding: EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(
@@ -146,6 +171,12 @@ class _RegisterState extends State<Register> {
                   height: double.infinity,
                   width: double.infinity,
                   decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: Image.asset('assets/images/bg.jpg').image,
+                      colorFilter: new ColorFilter.mode(
+                          Colors.black.withOpacity(0.3), BlendMode.dstATop),
+                      fit: BoxFit.cover,
+                    ),
                     gradient: LinearGradient(
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
@@ -182,6 +213,14 @@ class _RegisterState extends State<Register> {
                         buildSignUpBtn(),
                       ],
                     ),
+                  )),
+              Padding(
+                  padding: EdgeInsets.only(left: 20, top: 40),
+                  child: ActionButton(
+                    iconData: CupertinoIcons.left_chevron,
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
                   )),
             ],
           ),
