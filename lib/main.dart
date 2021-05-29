@@ -13,6 +13,7 @@ import 'package:taskify/views/space/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:taskify/vedant_task/slidebar.dart';
 import 'package:taskify/views/splash.dart';
+import 'package:taskify/task_list/models/task_data.dart';
 
 import 'models/tabs.dart';
 
@@ -62,6 +63,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<TabViews>(
           create: (context) => TabViews(),
         ),
+        ChangeNotifierProvider<TaskData>(
+          create: (context) => TaskData(),
+          )
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
