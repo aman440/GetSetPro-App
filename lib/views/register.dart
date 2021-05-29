@@ -2,13 +2,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../services/auth.dart';
 
-class register extends StatefulWidget {
+class Register extends StatefulWidget {
   @override
-  _registerState createState() => _registerState();
+  _RegisterState createState() => _RegisterState();
 }
 
-class _registerState extends State<register> {
+class _RegisterState extends State<Register> {
   Widget buildEmail() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -113,7 +114,9 @@ class _registerState extends State<register> {
       width: double.infinity,
       child: RaisedButton(
         elevation: 5,
-        onPressed: () => print("SignUp Button Pressed"),
+        onPressed: () {
+          print("SignUp button pressed");
+        },
         padding: EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
