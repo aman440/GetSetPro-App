@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:rive/rive.dart';
 import 'package:taskify/services/auth.dart';
+import 'package:taskify/views/home.dart';
 import 'package:taskify/views/login.dart';
 import 'package:taskify/views/register.dart';
 import 'package:taskify/views/space/home.dart';
@@ -12,6 +13,8 @@ import 'package:taskify/views/space/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:taskify/vedant_task/slidebar.dart';
 import 'package:taskify/views/splash.dart';
+
+import 'models/tabs.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -56,14 +59,15 @@ class MyApp extends StatelessWidget {
         Provider<Auth>(
           create: (context) => _auth,
         ),
-        // ChangeNotifierProvider<TabViews>(
-        //   create: (context) => TabViews(),
-        // ),
+        ChangeNotifierProvider<TabViews>(
+          create: (context) => TabViews(),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: SplashPage.id,
+        initialRoute: HomePage.id,
         routes: {
+          HomePage.id: (context) => HomePage(),
           SplashPage.id: (context) => SplashPage(),
           RegisterPage.id: (context) => RegisterPage(),
           LoginPage.id: (context) => LoginPage(),
