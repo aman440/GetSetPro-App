@@ -32,7 +32,7 @@ class _AppContainerState extends State<AppContainer> {
   bool sidebarOpen = false;
 
   double yOffset = 0;
-  double xOffset = 60;
+  double xOffset = 0;
   double pageScale = 1;
 
   int selectedMenuItem = 0;
@@ -42,7 +42,7 @@ class _AppContainerState extends State<AppContainer> {
 
   void setSidebarState() {
     setState(() {
-      xOffset = sidebarOpen ? 265 : 60;
+      xOffset = sidebarOpen ? 265 : 0;
       yOffset = sidebarOpen ? 70 : 0;
       pageScale = sidebarOpen ? 0.8 : 1;
     });
