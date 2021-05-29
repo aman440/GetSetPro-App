@@ -27,7 +27,7 @@ class TabViews extends ChangeNotifier {
         ob = AppContainer();
         break;
       case 1:
-        ob = AddTaskScreen();
+        ob = PeersTab();
         break;
       case 2:
         ob = StatusTab();
