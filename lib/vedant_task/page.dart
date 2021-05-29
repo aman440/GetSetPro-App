@@ -1,5 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+//import 'package:todoey_flutter/widgets/tasks_list.dart';
+//import 'package:todoey_flutter/screens/add_task_screen.dart';
+import 'package:provider/provider.dart';
+//import 'package:todoey_flutter/models/task_data.dart';
+import 'package:taskify/task_list/widgets/tasks_list.dart';
+import 'package:taskify/task_list/models/task_data.dart';
+import 'package:taskify/task_list/screens/add_task_screen.dart';
 
 class Paaage {
   final String name;
@@ -59,7 +66,7 @@ class _ContentState extends State<Content> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.maxFinite,
+      width: MediaQuery.of(context).size.width,
       color: Colors.pink,
       child: Column(
         children: [
@@ -99,7 +106,22 @@ class _ContentState extends State<Content> {
               ),
             ],
           ),
+
+          // Container(
+          //   height: 200,
+          //   padding: EdgeInsets.symmetric(horizontal: 20.0),
+          //   decoration: BoxDecoration(
+          //     color: Colors.white,
+          //     borderRadius: BorderRadius.only(
+          //       topLeft: Radius.circular(20.0),
+          //       topRight: Radius.circular(20.0),
+          //     ),
+          //   ),
+          //   child: TasksList(),
+          // ),
+
         ],
+
       ),
     );
   }
