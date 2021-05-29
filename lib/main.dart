@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:rive/rive.dart';
 import 'package:taskify/views/space/home.dart';
 import 'package:taskify/views/space/splash.dart';
+import 'package:flutter/material.dart';
+import 'package:taskify/vedant_task/slidebar.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
