@@ -1,3 +1,4 @@
+![076d362d-c27c-4fa4-8710-d8a571b8fa5f](https://user-images.githubusercontent.com/51325847/120094452-0de24d80-c13e-11eb-999d-693d6e8bd87d.jpg)
 
 # GetSetPro
 
@@ -21,7 +22,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-    <img src="setup/logo.png" alt="Logo" width="350" height="350">
+    <img src="https://user-images.githubusercontent.com/51325847/120094452-0de24d80-c13e-11eb-999d-693d6e8bd87d.jpg" alt="Logo" width="350" height="350">
 
   <h3 align="center">GetSetPro</h3>
 
