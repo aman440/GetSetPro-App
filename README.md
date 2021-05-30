@@ -1,3 +1,11 @@
+![7e9c9f35-2813-4fde-a483-6d9226dfd18e](https://user-images.githubusercontent.com/51325847/120094183-9233d100-c13c-11eb-813f-8f7cfe236ad5.jpg)
+![3c5394e2-f804-4227-8334-1a1f2bf0efc8](https://user-images.githubusercontent.com/51325847/120094185-93fd9480-c13c-11eb-9be9-c2c18e40d6b4.jpg)
+![fa6cd9ed-74f5-4b35-ae5b-ac772b471ea7](https://user-images.githubusercontent.com/51325847/120094188-94962b00-c13c-11eb-93b6-f2ca00e18e93.jpg)
+![1b4c6691-8efb-4132-8a35-cf1d82d3b0f9](https://user-images.githubusercontent.com/51325847/120094189-952ec180-c13c-11eb-9005-6071bb47894c.jpg)
+![756baba8-b2f4-4bf3-80bd-e26c472a109b](https://user-images.githubusercontent.com/51325847/120094190-952ec180-c13c-11eb-91e3-8e4f1830ff83.jpg)
+![f27b944c-35cc-481d-949e-74ca7d1fab35](https://user-images.githubusercontent.com/51325847/120094192-95c75800-c13c-11eb-8d3a-9c693f6e0ae9.jpg)
+![8d4eb11a-f0a8-4b89-9145-ff4e87258be4](https://user-images.githubusercontent.com/51325847/120094193-965fee80-c13c-11eb-820b-4181d192711d.jpg)
+![8f2b8bb5-9329-4380-9e1c-1f9cbb4289a8](https://user-images.githubusercontent.com/51325847/120094194-96f88500-c13c-11eb-9353-31f6991f411c.jpg)
 # taskify
 
 
@@ -79,11 +87,11 @@ Listed below are some major dependencies list, for the complete list visit [pubs
 ### Installation
 The drive link to the latest APK can be found [here](https://drive.google.com/file/d/1BQC2p_bGEaDFPKEt-K50rvE5S0xf9wrZ/view?usp=sharing)
 
-<!-- USAGE EXAMPLES 
+<!-- USAGE EXAMPLES--> 
 ## Screenshots
 
-<img src="https://github.com/Vedantgupta2303/EdMission/blob/master/setup/login-ss.jpeg"  width="100" height="200">  <img src="https://github.com/Vedantgupta2303/EdMission/blob/master/setup/ss1.jpeg"  width="100" height="200">  <img src="https://github.com/Vedantgupta2303/EdMission/blob/master/setup/ss2.jpeg"  width="100" height="200">  <img src="https://github.com/Vedantgupta2303/EdMission/blob/master/setup/ss3.jpeg"  width="100" height="200">  <img src="https://github.com/Vedantgupta2303/EdMission/blob/master/setup/ss4.jpeg"  width="100" height="200">  <img src="https://github.com/Vedantgupta2303/EdMission/blob/master/setup/ss5.jpeg"  width="100" height="200">  <img src="https://github.com/Vedantgupta2303/EdMission/blob/master/setup/vc-ss.jpeg"  width="100" height="200">
--->
+<img src="https://user-images.githubusercontent.com/51325847/120094183-9233d100-c13c-11eb-813f-8f7cfe236ad5.jpg"  width="100" height="200">  <img src="https://user-images.githubusercontent.com/51325847/120094185-93fd9480-c13c-11eb-9be9-c2c18e40d6b4.jpg"  width="100" height="200">  <img src="https://user-images.githubusercontent.com/51325847/120094188-94962b00-c13c-11eb-93b6-f2ca00e18e93.jpg"  width="100" height="200">  <img src="https://user-images.githubusercontent.com/51325847/120094189-952ec180-c13c-11eb-9005-6071bb47894c.jpg"  width="100" height="200">  <img src="https://user-images.githubusercontent.com/51325847/120094190-952ec180-c13c-11eb-91e3-8e4f1830ff83.jpg"  width="100" height="200">  <img src="https://user-images.githubusercontent.com/51325847/120094192-95c75800-c13c-11eb-8d3a-9c693f6e0ae9.jpg"  width="100" height="200">  <img src="https://user-images.githubusercontent.com/51325847/120094193-965fee80-c13c-11eb-820b-4181d192711d.jpg"  width="100" height="200">
+
 
 <!-- ROADMAP -->
 ## Roadmap
