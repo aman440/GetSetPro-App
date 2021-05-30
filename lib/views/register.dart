@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:taskify/views/home.dart';
 import 'package:taskify/widgets/action.dart';
 import '../services/auth.dart';
 
@@ -143,8 +144,7 @@ class _RegisterPageState extends State<RegisterPage> {
             _showProgressBar = false;
           });
           if (result)
-            print(result);
-          // Navigator.popAndPushNamed(context, HomePage.id);
+            Navigator.popAndPushNamed(context, HomePage.id);
           else {
             _passwordController.clear();
           }

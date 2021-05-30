@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:taskify/constants.dart';
 import 'package:taskify/task_list/models/task_data.dart';
 import 'package:taskify/task_list/screens/add_task_screen.dart';
 import 'package:taskify/task_list/screens/tasks_screen.dart';
@@ -56,21 +57,29 @@ class _AppContainerState extends State<AppContainer> {
   final List<Widget> contents = [
     Column(children: [
       Container(
-        color: Colors.pink,
+        color: Color(0xff5ac18e),
         child: Row(
           children: [
             Expanded(
               child: GestureDetector(
                 onTap: () => print('hi'),
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                  margin: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                  margin: EdgeInsets.symmetric(vertical: 30, horizontal: 10),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20)),
-                  child: Text(
-                    'Task',
-                    textAlign: TextAlign.center,
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          'Task',
+                          style: kHeading1.copyWith(fontSize: 20),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      Expanded(child: Image.asset('assets/images/cup.gif'))
+                    ],
                   ),
                 ),
               ),
@@ -79,14 +88,22 @@ class _AppContainerState extends State<AppContainer> {
               child: GestureDetector(
                 onTap: () {},
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                  margin: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                  margin: EdgeInsets.symmetric(vertical: 30, horizontal: 10),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20)),
-                  child: Text(
-                    'Rank',
-                    textAlign: TextAlign.center,
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          'Rank',
+                          style: kHeading1.copyWith(fontSize: 20),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      Expanded(child: Image.asset('assets/images/confetti.gif'))
+                    ],
                   ),
                 ),
               ),
@@ -102,6 +119,14 @@ class _AppContainerState extends State<AppContainer> {
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: Image.asset('assets/images/bg.jpg').image,
+          colorFilter: new ColorFilter.mode(
+              Colors.black.withOpacity(0.2), BlendMode.dstATop),
+          fit: BoxFit.cover,
+        ),
+      ),
       child: Stack(
         children: <Widget>[
           Container(

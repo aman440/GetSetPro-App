@@ -71,60 +71,69 @@ class _StatusTabState extends State<StatusTab> {
         print('long pressed date $date');
       },
     );
-    return Container(
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(20),
-          clipBehavior: Clip.hardEdge,
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-            child: Container(
-              decoration: BoxDecoration(
-                  color: Colors.grey.shade200.withOpacity(0.0),
-                  borderRadius: BorderRadius.circular(20)),
-              child: Column(
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(
-                      top: 30.0,
-                      bottom: 16.0,
-                      left: 16.0,
-                      right: 16.0,
-                    ),
-                    child: Row(
-                      children: <Widget>[
-                        Expanded(
-                            child: Text(
-                          ' May ${_currentDate.day.toString()}, 2021',
-                          // _currentMonth,
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 24.0,
-                              color: Colors.white70),
-                        )),
-                        TextButton(
-                          child: NeumorphicIcon(
-                            CupertinoIcons.arrow_left,
-                            size: 30,
-                          ),
-                          onPressed: () {},
-                        ),
-                        TextButton(
-                          child: NeumorphicIcon(CupertinoIcons.arrow_right,
-                              size: 30),
-                          onPressed: () {},
-                        )
-                      ],
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 16.0),
-                    child: _calendarCarouselNoHeader,
-                  )
-                ],
-              ),
+    return Center(
+      child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: Image.asset('assets/images/bg.jpg').image,
+              colorFilter: new ColorFilter.mode(
+                  Colors.black.withOpacity(0.5), BlendMode.dstATop),
+              fit: BoxFit.cover,
             ),
           ),
-        ));
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            clipBehavior: Clip.hardEdge,
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.grey.shade200.withOpacity(0.0),
+                    borderRadius: BorderRadius.circular(20)),
+                child: Column(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(
+                        top: 30.0,
+                        bottom: 16.0,
+                        left: 16.0,
+                        right: 16.0,
+                      ),
+                      child: Row(
+                        children: <Widget>[
+                          Expanded(
+                              child: Text(
+                            ' May ${_currentDate.day.toString()}, 2021',
+                            // _currentMonth,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24.0,
+                                color: Colors.white70),
+                          )),
+                          TextButton(
+                            child: NeumorphicIcon(
+                              CupertinoIcons.arrow_left,
+                              size: 30,
+                            ),
+                            onPressed: () {},
+                          ),
+                          TextButton(
+                            child: NeumorphicIcon(CupertinoIcons.arrow_right,
+                                size: 30),
+                            onPressed: () {},
+                          )
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 16.0),
+                      child: _calendarCarouselNoHeader,
+                    )
+                  ],
+                ),
+              ),
+            ),
+          )),
+    );
   }
 }

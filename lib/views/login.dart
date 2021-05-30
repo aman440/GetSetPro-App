@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:provider/provider.dart';
 import 'package:taskify/services/auth.dart';
+import 'package:taskify/views/home.dart';
 import 'package:taskify/views/register.dart';
 
 class LoginPage extends StatefulWidget {
@@ -184,8 +185,7 @@ class _LoginPageState extends State<LoginPage> {
             _showProgressBar = false;
           });
           if (result)
-            print(result);
-          // Navigator.popAndPushNamed(context, HomePage.id);
+            Navigator.popAndPushNamed(context, HomePage.id);
           else {
             _passwordController.clear();
           }

@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:rive/rive.dart';
+import 'package:taskify/views/home.dart';
 
 import 'login.dart';
 
@@ -23,7 +24,7 @@ class _SplashPageState extends State<SplashPage> {
       if (_user == null)
         Navigator.popAndPushNamed(context, LoginPage.id);
       else {
-        // Navigator.popAndPushNamed(context, HomePage.id);
+        Navigator.popAndPushNamed(context, HomePage.id);
       }
     });
   }
@@ -69,16 +70,12 @@ class _SplashPageState extends State<SplashPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CircleAvatar(
-                    backgroundColor: Colors.white,
-                    radius: 100.0,
-                    backgroundImage: AssetImage('assets/images/logo.png'),
-                  ),
+                  Image.asset('assets/images/logo.png'),
                   SizedBox(
                     height: 20.0,
                   ),
                   Text(
-                    'Title',
+                    'GetSetPro',
                     style: TextStyle(
                       fontSize: 30.0,
                       fontWeight: FontWeight.bold,
