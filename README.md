@@ -18,25 +18,24 @@
 [![MIT License][license-shield]][license-url]
 
 
-<!-- PROJECT LOGO 
+<!-- PROJECT LOGO -->
 <br />
 <p align="center">
     <img src="setup/logo.png" alt="Logo" width="350" height="350">
 
-  <h3 align="center">EdMission</h3>
+  <h3 align="center">GetSetPro</h3>
 
   <p align="center">
-    Admissions Re-imagined!
+    Compete together, Grow together
     <br />
     <a href="https://drive.google.com/file/d/1BQC2p_bGEaDFPKEt-K50rvE5S0xf9wrZ/view?usp=sharing"><strong>Install APK</strong></a>
     <br />
     <br />
     ·
-    <a href="https://github.com/Vedantgupta2303/EdMission/issues/new">Report Bug</a>
+    <a href="https://github.com/purnenduvashistha/GetSetPro/issues/new">Report Bug</a>
     ·
-    <a href="https://github.com/Vedantgupta2303/EdMission/issues/new">Request Feature</a>
-    ·
-    <a href="https://docs.google.com/document/d/1AvjmpZW3YEtSYxRsifFd0P2zuNfmUMBU4deRhDOUBUI/edit?usp=sharing">Project Report</a>
+    <a href="https://github.com/purnenduvashistha/GetSetPro/issues/new">Request Feature</a>
+    .
     ·
   </p>
 </p>
