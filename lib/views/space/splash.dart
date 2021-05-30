@@ -31,8 +31,8 @@ class _SpaceSplashPageState extends State<SpaceSplashPage> {
         child: Stack(
           alignment: Alignment.bottomCenter,
           children: [
-            RiveAnimation.network(
-              'https://public.rive.app/community/runtime-files/309-599-yoshis-island-1.riv',
+            RiveAnimation.asset(
+              'assets/rive/309-599-yoshis-island-1.riv',
               fit: BoxFit.cover,
             ),
             AnimationBackground(),
@@ -53,7 +53,7 @@ class _OverlayMessageState extends State<OverlayMessage> {
   bool showProgressLoader = true;
 
   Future<void> navigate() async {
-    return Future.delayed(Duration(milliseconds: 4000), () async {
+    return Future.delayed(Duration(milliseconds: 1000), () async {
       setState(() {
         showProgressLoader = false;
       });
