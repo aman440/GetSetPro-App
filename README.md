@@ -1,5 +1,3 @@
-![076d362d-c27c-4fa4-8710-d8a571b8fa5f](https://user-images.githubusercontent.com/51325847/120094452-0de24d80-c13e-11eb-999d-693d6e8bd87d.jpg)
-
 # GetSetPro
 
 
