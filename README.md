@@ -120,7 +120,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 
 <!-- ACKNOWLEDGEMENTS -->
-## Our Contributors👩‍💻👨‍💻 :
+## Our Contributor :
 <a href="https://github.com/purnenduvashistha/Taskify/graphs/contributors">
   <img src="https://contributors-img.web.app/image?repo=purnenduvashistha/Taskify" />
 </a>
