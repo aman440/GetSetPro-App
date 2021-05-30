@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:rive/rive.dart';
 
 import 'login.dart';
 
@@ -14,6 +15,8 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
+  // final riveFileName = 'assets/truck.riv';
+  // late Artboard _artboard;
   Future<void> navigate() async {
     final _user = FirebaseAuth.instance.currentUser;
     return Future.delayed(Duration(milliseconds: 1000), () async {
@@ -27,10 +30,24 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   void initState() {
+    //  _loadRiveFile();
     super.initState();
     WidgetsBinding.instance!
         .addPostFrameCallback((_) => afterFirstLayout(context));
   }
+
+  // void _loadRiveFile() async {
+  //   final bytes = await rootBundle.load(riveFileName);
+  //   final file = RiveFile();
+
+  //   if (file.import(bytes)) {
+  //     // Select an animation by its name
+  //     setState(() => _artboard = file.mainArtboard
+  //       ..addController(
+  //         SimpleAnimation('idle'),
+  //       ));
+  //   }
+  // }
 
   void afterFirstLayout(BuildContext context) => navigate();
   @override

@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:taskify/models/tabs.dart';
+import 'package:taskify/views/space/splash.dart';
+import 'package:taskify/views/splash.dart';
 import 'package:taskify/widgets/fab.dart';
 
 class HomePage extends StatefulWidget {
@@ -54,10 +56,15 @@ class _HomePageState extends State<HomePage> {
           ),
           Padding(
               padding: const EdgeInsets.only(bottom: 10.0),
-              child: CircleAvatar(
-                backgroundColor: Colors.blue.shade50,
-                radius: 25,
-                child: Image.asset('assets/images/island.gif'),
+              child: InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, SpaceSplashPage.id);
+                },
+                child: CircleAvatar(
+                  backgroundColor: Colors.blue.shade50,
+                  radius: 25,
+                  child: Image.asset('assets/images/island.gif'),
+                ),
               ))
         ],
       )),

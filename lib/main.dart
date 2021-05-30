@@ -1,21 +1,18 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:rive/rive.dart';
-import 'package:taskify/services/auth.dart';
-import 'package:taskify/views/home.dart';
-import 'package:taskify/views/login.dart';
-import 'package:taskify/views/register.dart';
-import 'package:taskify/views/space/home.dart';
-import 'package:taskify/views/space/splash.dart';
-import 'package:flutter/material.dart';
-import 'package:taskify/vedant_task/slidebar.dart';
-import 'package:taskify/views/splash.dart';
-import 'package:taskify/task_list/models/task_data.dart';
 
 import 'models/tabs.dart';
+import 'services/auth.dart';
+import 'task_list/models/task_data.dart';
+import 'vedant_task/slidebar.dart';
+import 'views/home.dart';
+import 'views/login.dart';
+import 'views/register.dart';
+import 'views/space/home.dart';
+import 'views/space/splash.dart';
+import 'views/splash.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,9 +20,8 @@ void main() {
 }
 
 class App extends StatelessWidget {
-  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
-
   @override
+  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
   Widget build(BuildContext context) {
     return FutureBuilder(
       future: _initialization,
@@ -34,8 +30,8 @@ class App extends StatelessWidget {
           return Center(
               child: Container(
                   height: 100,
-                  width: MediaQuery.of(context).size.width,
-                  child: Text('An Unexpected Error occured! :(')));
+                  width: double.infinity,
+                  child: Image.asset('assets/images/sloth.gif')));
         }
 
         if (snapshot.connectionState == ConnectionState.done) {
@@ -69,7 +65,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: HomePage.id,
+        initialRoute: SplashPage.id,
         routes: {
           AppContainer.id: (context) => AppContainer(),
           HomePage.id: (context) => HomePage(),

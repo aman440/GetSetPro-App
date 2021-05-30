@@ -38,6 +38,7 @@ class _SubmitButtonState extends State<SubmitButton> {
   @override
   Widget build(BuildContext context) {
     return ClayContainer(
+      spread: 0,
       curveType: CurveType.convex,
       parentColor: widget.sColor ?? Color(0xffF6FAFE),
       color: widget.pColor ?? Color(0xff2F4858),

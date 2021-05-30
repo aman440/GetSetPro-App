@@ -3,8 +3,10 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:taskify/views/space/home.dart';
-import 'package:taskify/widgets/action.dart';
+import 'package:rive/rive.dart';
+
+import '../../widgets/action.dart';
+import 'home.dart';
 
 class SpaceSplashPage extends StatefulWidget {
   static String id = 'splashSpacePage';
@@ -29,6 +31,10 @@ class _SpaceSplashPageState extends State<SpaceSplashPage> {
         child: Stack(
           alignment: Alignment.bottomCenter,
           children: [
+            RiveAnimation.network(
+              'https://public.rive.app/community/runtime-files/309-599-yoshis-island-1.riv',
+              fit: BoxFit.cover,
+            ),
             AnimationBackground(),
             OverlayMessage(),
           ],

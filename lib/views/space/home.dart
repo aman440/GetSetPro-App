@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rive/rive.dart';
+import 'package:taskify/constants.dart';
+import 'package:taskify/task_list/widgets/submitBtn.dart';
 import 'package:taskify/views/space/search.dart';
 import 'package:taskify/widgets/action.dart';
 import 'package:flutter_calendar_carousel/flutter_calendar_carousel.dart'
@@ -14,6 +16,7 @@ import 'package:flutter_calendar_carousel/classes/event_list.dart';
 import 'package:intl/intl.dart' show DateFormat;
 
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:taskify/widgets/overlay.dart';
 
 class SpaceHomePage extends StatefulWidget {
   static String id = 'homeSpacePage';
@@ -32,7 +35,6 @@ class _SpaceHomePageState extends State<SpaceHomePage> {
   String _currentMonth = DateFormat.yMMM().format(DateTime.now());
   @override
   Widget build(BuildContext context) {
-    showCalender();
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -48,6 +50,7 @@ class _SpaceHomePageState extends State<SpaceHomePage> {
           child: SingleChildScrollView(
             padding: EdgeInsets.all(20),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
@@ -70,22 +73,33 @@ class _SpaceHomePageState extends State<SpaceHomePage> {
                 SizedBox(
                   height: 20,
                 ),
+                Text(
+                  'Leader Board',
+                  style: kHeading1.copyWith(color: Colors.white),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
                 Container(
-                  height: 300,
+                  height: 250,
                   width: double.infinity,
                   decoration: BoxDecoration(
-                      color: Colors.blue,
+                      color: Colors.red,
                       borderRadius: BorderRadius.circular(20)),
                   child: Stack(
                     alignment: Alignment.bottomCenter,
                     children: [
-                      FlutterLogo(
-                        size: 300,
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: RiveAnimation.network(
+                          'https://cdn.rive.app/animations/truck.riv',
+                          fit: BoxFit.cover,
+                        ),
                       ),
                       Container(
                         margin:
-                            EdgeInsets.only(left: 10, right: 10, bottom: 40),
-                        height: 100,
+                            EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                        height: 75,
                         width: double.infinity,
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
@@ -94,7 +108,7 @@ class _SpaceHomePageState extends State<SpaceHomePage> {
                             filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                             child: Container(
                               decoration: BoxDecoration(
-                                color: Colors.grey.shade200.withOpacity(0.2),
+                                color: Colors.grey.shade200.withOpacity(0.1),
                                 borderRadius: BorderRadius.circular(20),
                               ),
                               child: Row(
@@ -105,7 +119,9 @@ class _SpaceHomePageState extends State<SpaceHomePage> {
                                   Row(
                                     children: [
                                       CircleAvatar(
-                                        child: Icon(Icons.person),
+                                        backgroundColor: Colors.white,
+                                        child: Image.asset(
+                                            'assets/images/juggler.gif'),
                                       ),
                                       SizedBox(
                                         width: 12,
@@ -122,7 +138,11 @@ class _SpaceHomePageState extends State<SpaceHomePage> {
                                           SizedBox(
                                             height: 10,
                                           ),
-                                          Text("     Kunal Roy")
+                                          Text(
+                                            "Kunal Roy",
+                                            style: kHeading4.copyWith(
+                                                color: Colors.white70),
+                                          )
                                         ],
                                       ),
                                     ],
@@ -152,7 +172,51 @@ class _SpaceHomePageState extends State<SpaceHomePage> {
                   ),
                 ),
                 SizedBox(
-                  height: 50,
+                  height: 40,
+                ),
+                SubmitButton(
+                  text: 'Trending In Your Space',
+                  onTap: () {},
+                  pColor: Colors.amber,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                OverlayDisplay(
+                  name: '10 minutes of Running',
+                  title: 'Harsh Raj',
+                  child: 'flame.riv',
+                  gif: 'fire.gif',
+                ),
+                OverlayDisplay(
+                  name: 'Early rising',
+                  title: 'Vedant Gupta',
+                  child: 'zombie.riv',
+                  gif: 'sloth.gif',
+                ),
+                OverlayDisplay(
+                  name: 'Painting',
+                  title: 'Purnendu Vasistha',
+                  child: 'painting.riv',
+                  gif: 'wheel.gif',
+                ),
+                // OverlayDisplay(
+                //   name: 'Karate Practice',
+                //   title: 'fd',
+                //   child: 'swordman.riv',
+                //   gif: 'confetti.gif',
+                // ),
+                OverlayDisplay(
+                  name: 'No angry challenge',
+                  title: 'Gaurav Anand',
+                  child: 'team.riv',
+                  gif: 'popper.gif',
+                ),
+                OverlayDisplay(
+                  name: '30 minutes walking',
+                  title: 'Aman Pratap',
+                  child: 'leg.riv',
+                  gif: 'popper.gif',
                 ),
                 showCalender()
               ],

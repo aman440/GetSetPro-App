@@ -135,7 +135,7 @@ class _RegisterPageState extends State<RegisterPage> {
           setState(() {
             _showProgressBar = true;
           });
-          var result = await auth.signIn(
+          var result = await auth.register(
               context: context,
               email: _emailController.text.toString().trim(),
               password: _passwordController.text.toString().trim());
